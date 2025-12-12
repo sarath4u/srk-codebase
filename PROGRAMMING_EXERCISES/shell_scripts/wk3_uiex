@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# File: wk3_uiex
+
+echo "enter a noun,verb and an adjective:"
+read noun verb adj
+#echo "enter a verb"
+#read verb
+#echo "enter an adjective"
+#read adj
+
+echo "the $adj $noun $verb"

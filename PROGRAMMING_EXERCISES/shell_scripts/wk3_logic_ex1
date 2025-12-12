@@ -1,0 +1,9 @@
+#! usr/bin/env bash
+# File name: wk3_logic_ex1
+
+echo "Enter a string"
+read inpt
+if [[ $inpt =~ ^[A-Z*] ]]
+then
+echo "how proper"
+fi
