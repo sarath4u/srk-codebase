@@ -82,8 +82,17 @@ def svgparser(f):
         for row in fhandle:
             line = row.strip()
             if 'path' in line or path_found:
+                if not 'd=' in line: 
+                    if path_found:
+                        curve_data = curve_data + line
+                    else:
+                        path_found = True
+                        continue
                 if path_found:
-                    curve_data = curve_data + ' ' + line
+                    if 'd=' in line:
+                        curve_data = line.split('d=')[1]
+                    else:
+                        curve_data = curve_data + ' ' + line
                 else:
                     if 'transform' in line:
                         transform_info  = line.split('"')[1].split()

@@ -98,22 +98,28 @@ for ii, command in enumerate(commands[:-1]):
 #    print(f'actual string: {coords}')
     data = data[len(coords)+1:]
     if ',' in coords:
-        coords = coords.split(',')
-        for jj, each in enumerate(coords):
-            if '-' in each:
-                splits = each.split('-')
-                if splits[0] == '' and len(splits) == 2: continue
-                if splits[0] == '':
-                    splits[1] = '-' + splits[1]
-                    splits.pop(0)
-                to_save = coords[jj+1:jj+len(splits)]
-                for kk in range(1, len(splits)):
-                    splits[kk] = '-' + splits[kk] 
-                coords[jj : jj + len(splits)] = splits
-                if to_save:
-                    coords[jj + len(splits): jj + len(splits)] = to_save
-                else:
-                    break
+        if not ' ' in coords:
+            coords = coords.split(',')
+            for jj, each in enumerate(coords):
+                if '-' in each:
+                    splits = each.split('-')
+                    if splits[0] == '' and len(splits) == 2: continue
+                    if splits[0] == '':
+                        splits[1] = '-' + splits[1]
+                        splits.pop(0)
+                    to_save = coords[jj+1:jj+len(splits)]
+                    for kk in range(1, len(splits)):
+                        splits[kk] = '-' + splits[kk] 
+                    coords[jj : jj + len(splits)] = splits
+                    if to_save:
+                        coords[jj + len(splits): jj + len(splits)] = to_save
+                    else:
+                        break
+        else:
+            coords = coords.split()
+            coords = ','.join(coords)
+            coords = coords.split(',')
+
     elif '-' in coords:
         coords = coords.split('-')
         if coords[0] == '':
