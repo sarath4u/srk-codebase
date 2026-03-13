@@ -100,7 +100,7 @@ def generate_background(no_of_artists, xMax, xMin, yMax, yMin, fourier=True):
 			arrow[ii] = ax.annotate('',
 								xy=(0,0),
 								xytext=(0.,0.),
-								arrowprops=dict(facecolor='black', shrink=0.0, width=0.01, headwidth=1.5, alpha=0.2)
+								arrowprops=dict(facecolor='white', shrink=0.0, width=0.01, headwidth=1.5, alpha=0.2)
 								   )
 		return fig, ax, circ, arrow, trace, point
 	else:

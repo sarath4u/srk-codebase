@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fouriersartists"
+version = "1.0.0"
+description = "An educational package to visualize and understand Fourier Transforms"
+authors = [{name="Sarath Radhakrishnan"}]
+dependencies = [
+    "numpy"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

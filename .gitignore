@@ -11,4 +11,7 @@ dist/
 *.exe
 *.mod
 *.o
+*.egg-info/
 .DS_Store
+./FUN/FourierVisual/dev/experiments/*
+./FUN/FourierVisual/data/videos/*

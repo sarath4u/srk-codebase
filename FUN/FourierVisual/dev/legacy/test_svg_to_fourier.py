@@ -82,7 +82,6 @@ if scale_tuple:
 else:
     scale = False
 commands = re.findall(r'[a-zA-Zz]', data)
-#print(commands)
 #fig, axes = plt.subplots(1, figsize=(3.5,4))
 curve = np.zeros(((len(commands) - 2) * t + 1,  2), dtype=float)
 for ii, command in enumerate(commands[:-1]):
@@ -222,7 +221,6 @@ xMax          = xMax + 0.1 * abs(xMax)
 yMax          = yMax + 0.5 * abs(yMax)
 xMin          = xMin - 0.5 * abs(xMin)
 yMin          = yMin - 0.1 * abs(yMin)
-print(f"xMax:{xMax}, yMax:{yMax}, xMin:{xMin}, yMin:{yMin}")
 z                                  = curve[:, 0] + 1j * curve[:, 1]
 tsteps                             = np.linspace(0, 1, N)
 artists                            = generate_artists(z, no_of_artists, tsteps)
@@ -238,7 +236,7 @@ if length > 0.:
     ax.annotate('',
                 xy=end_coord,
                 xytext=(0, 0),
-                arrowprops=dict(facecolor='black', shrink=0.0, width=0.01, headwidth=1, alpha=0.1)
+                arrowprops=dict(facecolor='white', shrink=0.0, width=0.01, headwidth=1.5, alpha=0.2)
                 )
 frames = N + 1
 ani    = FuncAnimation(fig, update_fourier, frames=frames, init_func=init, interval=interval, repeat=False, blit=True)
