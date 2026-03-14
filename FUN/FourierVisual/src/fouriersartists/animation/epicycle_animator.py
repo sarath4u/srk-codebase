@@ -27,9 +27,14 @@ class EpicycleAnimator:
 		self.x_history = []
 		self.y_history = []
 
-	# Initialize the artists
-
 	def initialize_artists(self):
+		"""
+        Initializes the variables for animation
+		Arguments: 
+			None
+		Returns:
+            None
+		"""
 		no_of_artists = len(self.artists)
 		self.circ     = [0.0]*(no_of_artists)
 		self.arrow    = [0.0]*(no_of_artists)
@@ -135,7 +140,16 @@ class EpicycleAnimator:
 		return [self.trace] + [self.point] + self.circ + self.arrow
 
 	def run(self, frames=100, save=False):
-		ani = FuncAnimation(self.fig, self.update, frames=frames, init_func=self.init, interval=self.interval, repeat=False, blit=True)
+		"""
+        Function to run the animation
+
+        Arguments:
+            frames - Number of frames for the animation
+            save   - If true saves the animation
+        Returns:
+            None
+        """
+        ani = FuncAnimation(self.fig, self.update, frames=frames, init_func=self.init, interval=self.interval, repeat=False, blit=True)
 		if save:
 			ani.save(f'anim_{no_of_artists}.mp4', fps=300, extra_args=['-vcodec', 'libx264'])
 		else:

@@ -5,6 +5,13 @@ def svgparser(f):
     """
     A function to parse the svg file to get the
     information for generating the figure
+
+    Arguments:
+        f - svg filename
+    Returns:
+        translate_tuple - coordinates to translate the figure to
+        scale_tuple     - values to scale the axes
+        curve_data      - path data to generate the curve
     """
     translate_tuple = None
     scale_tuple     = None
@@ -39,6 +46,13 @@ def svgparser(f):
 def svg_to_curve(filename, resolution=10):
     """
     Convert SVG path into Nx2 numpy array curve
+
+    Arguments:
+        filename   - svg filename
+        resolution - resolution for regeneration of the curve
+
+    Returns:
+        curve - Nx2 numpy array of coordinates of the curve
     """
     translate_tuple, scale_tuple, data = svgparser(filename)
     if data.count('M') > 1:
