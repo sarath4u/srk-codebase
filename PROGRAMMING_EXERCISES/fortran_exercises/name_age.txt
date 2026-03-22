@@ -1,0 +1,6 @@
+Thor 23
+IronMan 32
+Vision 49
+AntMan 35
+Strange 47
+Wasp 34

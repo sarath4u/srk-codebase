@@ -8,6 +8,8 @@ This repository is a public collection of projects, tools, numerical experiments
 - Scientific Computing
 - Numerical Methods
 - Fun coding
+    - ProjectEuler scripts
+    - Visulizing fourier transforms 
 - General programming utilities
 
 This repo is meant to:
