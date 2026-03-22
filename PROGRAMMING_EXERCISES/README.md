@@ -6,3 +6,5 @@ Contents include:
 - C/C++ numerical exercises
 - Bash scripting exercises
 - Fortran-Python Coupling
+- parallel programming exercise
+- Fortran exercises
